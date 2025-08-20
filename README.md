@@ -1,73 +1,158 @@
-# Welcome to your Lovable project
+# Split Magnifier - Professional Screen Magnification Tool
 
-## Project info
+A sophisticated desktop application for magnifying screen content with split-screen functionality, built with React and Electron.
 
-**URL**: https://lovable.dev/projects/e04fb495-1f64-456d-a4dc-f80f1ff733da
+![Split Magnifier Demo](build-resources/icon.png)
 
-## How can I edit this code?
+## 🚀 Features
 
-There are several ways of editing your application.
+- **Split-Screen Display** - Vertical and horizontal split layouts
+- **Real-Time Magnification** - 2x to 5x zoom levels with smooth rendering
+- **Interactive Focus Area** - Drag and resize the magnification region
+- **Professional Interface** - Dark theme with intuitive controls
+- **Keyboard Shortcuts** - Full hotkey support for power users
+- **Cross-Platform** - Windows, macOS, and Linux support
 
-**Use Lovable**
+## 🖥️ Desktop Application
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e04fb495-1f64-456d-a4dc-f80f1ff733da) and start prompting.
+This project includes a complete **Windows installer setup** using Electron:
 
-Changes made via Lovable will be committed automatically to this repo.
+- ✅ Native Windows `.exe` installer
+- ✅ Professional NSIS-based installation
+- ✅ Desktop shortcuts and Start Menu integration
+- ✅ Auto-updater ready for distribution
+- ✅ Code-signing ready for commercial use
 
-**Use your preferred IDE**
+## 📦 Quick Installation (Windows)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### For End Users
+1. Download the `.exe` installer from releases
+2. Run the installer and follow the setup wizard
+3. Launch "Split Magnifier" from your desktop or Start Menu
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### For Developers
+See [`WINDOWS_INSTALLER_SETUP.md`](WINDOWS_INSTALLER_SETUP.md) for complete build instructions.
 
-Follow these steps:
+**Quick Build:**
+```bash
+git clone <your-repo>
+cd <project>
+npm install
+# Add electron scripts to package.json (see setup guide)
+npm run electron:dist:win
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## 🎮 Usage
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Web Version
+1. Visit the live demo at your deployed URL
+2. Use toolbar controls to adjust zoom and split orientation
+3. Drag the focus area to select magnification region
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Desktop Version
+- **Ctrl+T** - Toggle magnifier on/off
+- **Ctrl+Plus/Minus** - Increase/decrease zoom
+- **Ctrl+1/2** - Switch between vertical/horizontal split
+- **Ctrl+R** - Reset focus area
+- **F11** - Toggle full screen
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+## 🛠️ Technology Stack
+
+- **Frontend**: React 18 + TypeScript + Vite
+- **UI Components**: Radix UI + shadcn/ui
+- **Styling**: Tailwind CSS with custom design system
+- **Desktop**: Electron with secure preload scripts
+- **Build**: electron-builder for cross-platform packaging
+- **Icons**: AI-generated professional icon set
+
+## 📁 Project Structure
+
+```
+split-magnifier/
+├── src/
+│   ├── components/
+│   │   ├── MagnifierApp.tsx        # Main application component
+│   │   ├── MagnifierToolbar.tsx    # Controls and settings
+│   │   ├── MagnifiedView.tsx       # Left panel magnification
+│   │   ├── SimulatedContent.tsx    # Right panel content
+│   │   └── FocusSelector.tsx       # Interactive focus area
+│   └── pages/Index.tsx
+├── electron/
+│   ├── main.js                     # Electron main process
+│   └── preload.js                  # Secure IPC communication
+├── build-resources/
+│   ├── icon.png                    # App icon (512x512)
+│   ├── icon.ico                    # Windows icon
+│   └── license.txt                 # MIT license
+└── scripts/
+    └── build-icons.js              # Icon generation
+```
+
+## 🎨 Design System
+
+The app features a professional dark theme with:
+
+- **Primary Color**: Purple (#8b5cf6) with gradients
+- **Background**: Dark grays with subtle variations
+- **Typography**: System fonts with careful hierarchy
+- **Animations**: Smooth focus pulse and hover effects
+- **Accessibility**: High contrast and keyboard navigation
+
+## 🔧 Development
+
+### Web Development
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Electron Development
+```bash
+npm run electron:dev
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build Production
+```bash
+# Web build
+npm run build
 
-**Use GitHub Codespaces**
+# Windows installer
+npm run electron:dist:win
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# All platforms
+npm run electron:dist
+```
 
-## What technologies are used for this project?
+## 📋 System Requirements
 
-This project is built with:
+### Web Version
+- Modern browser with ES2020 support
+- Minimum 1024x768 screen resolution
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Desktop Version
+- **Windows**: Windows 10+ (x64/x86)
+- **macOS**: macOS 10.14+ (Intel/Apple Silicon)
+- **Linux**: Ubuntu 18.04+ or equivalent
 
-## How can I deploy this project?
+## 🤝 Contributing
 
-Simply open [Lovable](https://lovable.dev/projects/e04fb495-1f64-456d-a4dc-f80f1ff733da) and click on Share -> Publish.
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly (web and desktop)
+5. Submit a pull request
 
-## Can I connect a custom domain to my Lovable project?
+## 📄 License
 
-Yes, you can!
+MIT License - see [LICENSE](build-resources/license.txt) for details.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🆘 Support
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- **Setup Issues**: See [`WINDOWS_INSTALLER_SETUP.md`](WINDOWS_INSTALLER_SETUP.md)
+- **Quick Start**: See [`QUICK_START.md`](QUICK_START.md)
+- **Bug Reports**: Create an issue with system details
+- **Feature Requests**: Describe your use case and requirements
+
+---
+
+**Professional Screen Magnification Made Simple** 🔍
