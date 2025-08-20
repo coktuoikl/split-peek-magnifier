@@ -52,6 +52,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				magnifier: {
+					glow: 'hsl(var(--magnifier-glow))',
+					surface: 'hsl(var(--magnifier-surface))',
+					accent: 'hsl(var(--magnifier-accent))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +89,20 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'focus-pulse': {
+					'0%, 100%': {
+						boxShadow: '0 0 0 1px hsl(var(--focus-ring) / 0.2), 0 0 30px hsl(var(--focus-ring) / 0.4)'
+					},
+					'50%': {
+						boxShadow: '0 0 0 1px hsl(var(--focus-ring) / 0.4), 0 0 40px hsl(var(--focus-ring) / 0.6)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'focus-pulse': 'focus-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
 			}
 		}
 	},
